@@ -16,10 +16,10 @@ namespace Inscripciones.Models
             //               MultipleActiveResultSets = True; 
             //               Encrypt=false ") ;
             var configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsetings.json")
+                .AddJsonFile("appsettings.json")
                 .Build();
-            string cadenaConexion = "Server=127.0.0.1;Database=inscripcioncontext;User=root;Password=milton;";
-            
+            //string cadenaConexion = "Server=127.0.0.1;Database=inscripcioncontext;User=root;Password=milton;";
+            string cadenaConexion = configuration.GetConnectionString("mysqlremoto");
             optionsBuilder.UseMySql(cadenaConexion,
             ServerVersion.AutoDetect(cadenaConexion));
         }
