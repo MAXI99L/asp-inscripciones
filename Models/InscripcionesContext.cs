@@ -15,6 +15,9 @@ namespace Inscripciones.Models
             //               User Id = sa; Password = 123;
             //               MultipleActiveResultSets = True; 
             //               Encrypt=false ") ;
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsetings.json")
+                .Build();
             string cadenaConexion = "Server=127.0.0.1;Database=inscripcioncontext;User=root;Password=milton;";
             
             optionsBuilder.UseMySql(cadenaConexion,
